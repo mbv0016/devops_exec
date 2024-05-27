@@ -1,0 +1,32 @@
+- Create a working directory as "~/devops_exce/" as home
+mkdir -p ~/devops_exce
+- download a zipped csv file from website to local using cli/cmd and store in path "$Home/data/raw/"
+mkdir -p "$HOME/data/raw/"
+curl -o "$HOME/data/raw/exec.zip" https://www.stats.govt.nz/assets/Uploads/International-trade/International-trade-December-2023-quarter/Download-data/international-trade-december-2023-quarter-csv.zip
+- unzip and edit file(2 functionalities)
+unzip "$HOME/data/raw/data.zip" -d "$HOME/data/raw/"
+- edit the csv file and store the edited csv file in "$home/data/edited/"
+vim "$HOME/data/raw/exce.zip"
+mkdir -p "$HOME/data/edited/" 
+mv "$HOME/data/raw/exce.zip" "$HOME/data/edited/"
+- git intiate 
+git init
+- create a local & dev branch
+git branch local
+git branch dev
+- push your code local to dev branch
+git checkout local
+git add exec.zip
+git add .
+git commit -m "message"
+git push 
+git push origin local:dev
+- create pull request to move data from dev to main branch
+create a main branch in git hub and create a pull request
+- create a .txt or .md file,write all commands and description.
+git checkout local
+git add commands.txt
+git add .
+git commit -m "message"
+git push 
+git push origin local:dev
